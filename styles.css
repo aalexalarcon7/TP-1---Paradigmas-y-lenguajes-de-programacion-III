@@ -1,10 +1,10 @@
 :root{
-  --bg:#0b0e0c;              /* negro verdoso */
-  --surface:#121815;          /* verde muy oscuro */
+  --bg:#0b0e0c;              
+  --surface:#121815;          
   --card:#141d18;
-  --accent:#1f4f3a;           /* british green oscuro */
+  --accent:#1f4f3a;           
   --accent-2:#2b6b50;
-  --gold:#c9c2a6;             /* champagne */
+  --gold:#c9c2a6;             
   --muted:#9aa39b;
   --text:#e9eee9;
   --text-dim:#cfd6d0;
@@ -193,4 +193,5 @@ hr.sep{ border:0; border-top:1px solid #1c241f; margin:6px 0 10px }
   .splash-inner, .splash-logo, .glow{ animation: none !important; }
   #splash{ transition: none; }
 }
+
 
