@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luxury Car's – Concesionaria Premium Online</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Intro -->
+<div id="splash" aria-hidden="true">
+  <div class="splash-inner">
+    <img src="logo-luxurycars.svg" alt="Luxury Car's logo" class="splash-logo">
+    <div class="glow"></div>
+  </div>
+</div>
+
+<header class="navbar">
+  <div class="container wrap">
+    <a class="brand" href="index.html">
+      <img src="logo-luxurycars.svg" alt="Logo Luxury Car's">
+      <span>Luxury Car's</span>
+    </a>
+    <nav class="nav">
+      <a class="active" href="index.html">Inicio</a>
+      <a href="listado_tabla.html">Productos (Tabla)</a>
+      <a href="listado_box.html">Productos (Grid)</a>
+      <a href="comprar.html">Comprar</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="--hero-image:url('img/hero.jpg')">
+  <div class="inner container">
+    <h1>Elegancia y Performance</h1>
+    <p>Explorá una selección curada de vehículos de alta gama inspirada en Aston Martin y Bentley.</p>
+    <a class="btn" href="listado_box.html">Ver catálogo</a>
+    <a class="btn secondary" href="listado_tabla.html">Lista completa</a>
+  </div>
+</section>
+
+<main class="container section">
+  <h2>Destacados</h2>
+  <p class="lead">Ediciones que definen una colección.</p>
+
+  <div class="grid" style="margin-top:18px">
+    <!-- Aston Martin Vantage -->
+    <article class="card">
+      <img class="media" src="img/vantage.jpg" alt="Aston Martin Vantage 2023">
+      <div class="body">
+        <span class="tag">Aston Martin</span>
+        <h3 class="title">Vantage 2023</h3>
+        <p class="price">USD 220.000</p>
+        <div class="actions">
+          <a class="btn" href="producto.html?auto=vantage">Ver ficha</a>
+          <a class="link" href="comprar.html">Comprar</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Bentley Continental GT -->
+    <article class="card">
+      <img class="media" src="img/continental.jpg" alt="Bentley Continental GT 2023">
+      <div class="body">
+        <span class="tag">Bentley</span>
+        <h3 class="title">Continental GT 2023</h3>
+        <p class="price">USD 280.000</p>
+        <div class="actions">
+          <a class="btn" href="producto.html?auto=continental">Ver ficha</a>
+          <a class="link" href="comprar.html">Comprar</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Bentley Bentayga -->
+    <article class="card">
+      <img class="media" src="img/bentayga.jpg" alt="Bentley Bentayga 2022">
+      <div class="body">
+        <span class="tag">Bentley</span>
+        <h3 class="title">Bentayga 2022</h3>
+        <p class="price">USD 300.000</p>
+        <div class="actions">
+          <a class="btn" href="producto.html?auto=bentayga">Ver ficha</a>
+          <a class="link" href="comprar.html">Comprar</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Aston Martin DB11 -->
+    <article class="card">
+      <img class="media" src="img/db11.jpg" alt="Aston Martin DB11 2022">
+      <div class="body">
+        <span class="tag">Aston Martin</span>
+        <h3 class="title">DB11 2022</h3>
+        <p class="price">USD 260.000</p>
+        <div class="actions">
+          <a class="btn" href="producto.html?auto=db11">Ver ficha</a>
+          <a class="link" href="comprar.html">Comprar</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Aston Martin DBX 707 -->
+    <article class="card">
+      <img class="media" src="img/dbx707.jpg" alt="Aston Martin DBX 707 2023">
+      <div class="body">
+        <span class="tag">Aston Martin</span>
+        <h3 class="title">DBX 707 2023</h3>
+        <p class="price">USD 330.000</p>
+        <div class="actions">
+          <a class="btn" href="producto.html?auto=dbx707">Ver ficha</a>
+          <a class="link" href="comprar.html">Comprar</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Bentley Flying Spur -->
+    <article class="card">
+      <img class="media" src="img/flyingspur.jpg" alt="Bentley Flying Spur 2023">
+      <div class="body">
+        <span class="tag">Bentley</span>
+        <h3 class="title">Flying Spur 2023</h3>
+        <p class="price">USD 310.000</p>
+        <div class="actions">
+          <a class="btn" href="producto.html?auto=flyingspur">Ver ficha</a>
+          <a class="link" href="comprar.html">Comprar</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</main>
+
+
+<footer class="footer">
+  <div class="container wrap">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="logo-luxurycars.svg" alt="Logo" style="height:24px">
+      <strong>Luxury Car's</strong>
+    </div>
+    <small>© 2025. Proyecto académico. Imágenes ilustrativas.</small>
+  </div>
+</footer>
+
+<script>
+  const splash = document.getElementById('splash');
+  const inner  = document.querySelector('.splash-inner');
+
+  function hideSplash(){ splash.classList.add('hidden'); }
+
+  inner?.addEventListener('animationend', (e) => {
+    if (e.animationName === 'splash-enter') setTimeout(hideSplash, 350);
+  });
+
+  // respaldo
+  setTimeout(hideSplash, 3000);
+</script>
+</body>
+</html>

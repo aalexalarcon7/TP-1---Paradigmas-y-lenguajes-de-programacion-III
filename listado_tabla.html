@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Listado (Tabla) – Luxury Car's</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="container wrap">
+    <a class="brand" href="index.html"><img src="logo-luxurycars.svg" alt=""><span>Luxury Car's</span></a>
+    <nav class="nav">
+      <a href="index.html">Inicio</a>
+      <a class="active" href="listado_tabla.html">Productos (Tabla)</a>
+      <a href="listado_box.html">Productos (Grid)</a>
+      <a href="comprar.html">Comprar</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container section">
+  <h2>Listado de productos — Tabla</h2>
+  <p class="lead">Vista tipo concesionaria con columnas clave. Podés ordenar y filtrar más adelante con JS si querés.</p>
+
+  <div class="table-wrap" style="margin-top:16px">
+    <table>
+      <thead>
+        <tr>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Año</th>
+          <th>Motor</th>
+          <th>0–100 km/h</th>
+          <th>Transmisión</th>
+          <th>Precio</th>
+          <th>Estado</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Aston Martin</td><td>Vantage</td><td>2023</td><td>V8 4.0</td><td>3.6 s</td><td>AT</td>
+          <td>USD 220.000</td><td><span class="badge">Disponible</span></td>
+          <td><a class="btn" href="producto.html?auto=vantage">Ver ficha</a></td>
+        </tr>
+        <tr>
+          <td>Aston Martin</td><td>DB11</td><td>2022</td><td>V12 5.2</td><td>3.9 s</td><td>AT</td>
+          <td>USD 260.000</td><td><span class="badge">Reservado</span></td>
+          <td><a class="btn" href="producto.html?auto=db11">Ver ficha</a></td>
+        </tr>
+        <tr>
+          <td>Bentley</td><td>Continental GT</td><td>2023</td><td>W12 6.0</td><td>3.7 s</td><td>AT</td>
+          <td>USD 280.000</td><td><span class="badge">Disponible</span></td>
+          <td><a class="btn" href="producto.html?auto=continental">Ver ficha</a></td>
+        </tr>
+        <tr>
+          <td>Bentley</td><td>Bentayga</td><td>2022</td><td>V8 4.0</td><td>4.5 s</td><td>AT</td>
+          <td>USD 300.000</td><td><span class="badge">Disponible</span></td>
+          <td><a class="btn" href="producto.html?auto=bentayga">Ver ficha</a></td>
+        </tr>
+        <tr>
+          <td>Aston Martin</td><td>DBX 707</td><td>2023</td><td>V8 4.0</td><td>3.3 s</td><td>AT</td>
+          <td>USD 330.000</td><td><span class="badge">Disponible</span></td>
+          <td><a class="btn" href="producto.html?auto=dbx707">Ver ficha</a></td>
+        </tr>
+        <tr>
+          <td>Bentley</td><td>Flying Spur</td><td>2023</td><td>V8 4.0</td><td>4.1 s</td><td>AT</td>
+          <td>USD 310.000</td><td><span class="badge">Disponible</span></td>
+          <td><a class="btn" href="producto.html?auto=flyingspur">Ver ficha</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container wrap">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="logo-luxurycars.svg" alt="" style="height:24px"><strong>Luxury Car's</strong>
+    </div>
+    <small>© 2025</small>
+  </div>
+</footer>
+</body>
+</html>

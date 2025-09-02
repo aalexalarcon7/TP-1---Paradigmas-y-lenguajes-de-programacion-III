@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comprar | Luxury Car's</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container wrap">
+      <a class="brand" href="index.html"><img src="logo-luxurycars.svg" alt=""><span>Luxury Car's</span></a>
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="listado_tabla.html">Productos (Tabla)</a>
+        <a href="listado_box.html">Productos (Grid)</a>
+        <a class="active" href="comprar.html">Comprar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h2>Formulario de compra</h2>
+
+    <!-- Selección del auto -->
+    <div class="field full">
+      <label for="auto-select">Selecciona el auto que deseas comprar</label>
+      <select id="auto-select" required>
+        <option value="vantage">Aston Martin Vantage 2023</option>
+        <option value="continental">Bentley Continental GT 2023</option>
+        <option value="bentayga">Bentley Bentayga 2022</option>
+        <option value="db11">Aston Martin DB11 2022</option>
+        <option value="dbx707">Aston Martin DBX 707 2023</option>
+        <option value="flyingspur">Bentley Flying Spur 2023</option>
+      </select>
+    </div>
+
+    <!-- Detalles del auto seleccionado -->
+    <div id="auto-info">
+      <p><strong>Auto seleccionado:</strong></p>
+      <div class="product">
+        <div class="gallery">
+          <img id="auto-image" src="img/vantage.jpg" alt="Auto seleccionado" style="width: 100%; max-width: 400px;">
+        </div>
+        <aside class="meta">
+          <p id="auto-price" class="price">USD 220.000</p>
+        </aside>
+      </div>
+    </div>
+
+    <!-- Formulario de compra -->
+    <form id="purchase-form" class="form">
+      <div class="field full">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" required placeholder="Tu nombre completo">
+      </div>
+
+      <div class="field full">
+        <label for="address">Dirección</label>
+        <input type="text" id="address" required placeholder="Tu dirección de entrega">
+      </div>
+
+      <div class="field full">
+        <label for="phone">Teléfono</label>
+        <input type="text" id="phone" required placeholder="Tu número de teléfono">
+      </div>
+
+      <div class="field full">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" required placeholder="Tu correo electrónico">
+      </div>
+
+      <div class="field full">
+        <label for="payment-method">Método de pago</label>
+        <select id="payment-method" required>
+          <option value="tarjeta">Tarjeta de crédito</option>
+          <option value="efectivo">Efectivo</option>
+        </select>
+      </div>
+
+      <div class="field full">
+        <label for="total">Total</label>
+        <input type="text" id="total" disabled value="USD 220.000">
+      </div>
+
+      <div class="field full">
+        <button type="submit" class="btn">Finalizar compra</button>
+      </div>
+    </form>
+
+    <div id="success-message" style="display: none;">
+      <h3>¡Compra realizada con éxito!</h3>
+      <p>Gracias por confiar en Luxury Car's. Tu auto será entregado pronto.</p>
+      <div>
+        <p><strong>Auto comprado:</strong></p>
+        <img id="success-image" src="img/vantage.jpg" alt="Auto comprado" style="width: 100%; max-width: 400px;">
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container wrap">
+      <div style="display:flex;align-items:center;gap:10px">
+        <img src="logo-luxurycars.svg" alt="" style="height:24px"><strong>Luxury Car's</strong>
+      </div>
+      <small>© 2025</small>
+    </div>
+  </footer>
+
+  <script>
+    // Base de datos de autos
+    const autos = {
+      vantage: {
+        name: "Aston Martin Vantage 2023",
+        description: "Coupé deportivo, poder y lujo.",
+        price: "USD 220.000",
+        image: "img/vantage.jpg"
+      },
+      continental: {
+        name: "Bentley Continental GT 2023",
+        description: "Coupé gran turismo con W12 de 6.0L. Lujo artesanal y performance.",
+        price: "USD 280.000",
+        image: "img/continental.jpg"
+      },
+      bentayga: {
+        name: "Bentley Bentayga 2022",
+        description: "SUV de lujo, potencia sin límites.",
+        price: "USD 300.000",
+        image: "img/bentayga.jpg"
+      },
+      db11: {
+        name: "Aston Martin DB11 2022",
+        description: "Lujo y confort con la potencia que distingue a Aston Martin.",
+        price: "USD 260.000",
+        image: "img/db11.jpg"
+      },
+      dbx707: {
+        name: "Aston Martin DBX 707 2023",
+        description: "SUV de alto rendimiento, lujo sin igual.",
+        price: "USD 330.000",
+        image: "img/dbx707.jpg"
+      },
+      flyingspur: {
+        name: "Bentley Flying Spur 2023",
+        description: "Una berlina de lujo con un motor de alta gama.",
+        price: "USD 310.000",
+        image: "img/flyingspur.jpg"
+      }
+    };
+
+    // mostrar auto seleccionado
+    const autoSelect = document.getElementById('auto-select');
+    const autoImage = document.getElementById('auto-image');
+    const autoPrice = document.getElementById('auto-price');
+    const autoName = document.getElementById('auto-info');
+
+    // funcion para actualizar la información del auto
+    function updateAutoInfo() {
+      const selectedAuto = autos[autoSelect.value];
+      autoImage.src = selectedAuto.image;
+      autoPrice.value = selectedAuto.price;
+      autoName.innerHTML = `<strong>Auto seleccionado:</strong> ${selectedAuto.name}`;
+    }
+
+    // Llamar a la función cuando el usuario cambie el auto
+    autoSelect.addEventListener('change', updateAutoInfo);
+
+    // Inicializar con el primer auto
+    updateAutoInfo();
+
+    // Cuando el formulario se envía
+    document.getElementById('purchase-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevenir la recarga de la página
+
+      // Obtener los datos del formulario
+      const name = document.getElementById('name').value;
+      const address = document.getElementById('address').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const paymentMethod = document.getElementById('payment-method').value;
+
+      // Validar que todos los campos estén completos
+      if (name && address && phone && email && paymentMethod) {
+        // Mostrar mensaje de éxito
+        document.getElementById('purchase-form').style.display = 'none'; // Ocultar el formulario
+        document.getElementById('success-message').style.display = 'block'; // Mostrar mensaje de éxito
+        // Deshabilitar el select para no permitir cambiar el auto
+        document.getElementById('auto-select').disabled = true; 
+        // Mostrar la imagen del auto en el mensaje
+        document.getElementById('success-image').src = autos[autoSelect.value].image;
+      }
+    });
+  </script>
+</body>
+</html>
